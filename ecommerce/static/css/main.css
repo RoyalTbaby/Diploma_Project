@@ -11,7 +11,6 @@ h1,h2,h3,h4,h5,h6{
 	background-color: #fff;
 	border-radius: 4px;
 	padding: 10px;
-	width: 350px;
 }
 
 .thumbnail{
@@ -66,8 +65,7 @@ h1,h2,h3,h4,h5,h6{
 
 .btn-warning {
     color: black;
-    background-color: ;
-    border-color: white;
+    border-color: dimgrey;
 	alignment: center;
 	width: 100px;
 }
