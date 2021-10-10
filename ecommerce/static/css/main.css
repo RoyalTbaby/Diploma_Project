@@ -70,6 +70,12 @@ h1,h2,h3,h4,h5,h6{
 	width: 100px;
 }
 
+.btn-success {
+    color: #fff;
+    background-color: forestgreen;
+    border-color: #28a745;
+}
+
 .row-image{
 	width: 100px;
 }
