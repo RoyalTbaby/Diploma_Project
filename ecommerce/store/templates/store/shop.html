@@ -2,8 +2,7 @@
 {% load static %}
 {% block content %}
 
-<iframe width="1110" height="600" loading="lazy" tabindex="-1" preload="auto" src="{% static 'video/baby.mp4' %}"
-        title="YouTube video player" frameborder="2"
+<iframe width="1110" height="600" top="0px" loading="eager" tabindex="-1" style="position: -webkit-sticky" preload="auto" src="{% static 'video/baby.mp4' %}"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
         allowfullscreen>
 
@@ -12,7 +11,7 @@
 <div class="row">
     {% for product in products%}
     <div class="col-lg-4">
-        <img class="thumbnail" src="{% static 'images/pic.png'%}">
+        <img class="thumbnail" src="{{product.image.url}}">
         <div class="box-element product">
             <h6><strong>{{product.name}}</strong></h6>
             <hr>
