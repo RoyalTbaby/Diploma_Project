@@ -5,6 +5,7 @@ body{
 
 h1,h2,h3,h4,h5,h6{
 	color:hsl(0, 0%, 30%);
+	line-height: 2;
 }
 
 .box-element{
@@ -55,6 +56,7 @@ h1,h2,h3,h4,h5,h6{
 
 .col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12{
 	margin-top: 10px;
+	padding: 0px;
 }
 
 .btn{
@@ -97,8 +99,13 @@ h1,h2,h3,h4,h5,h6{
 	display: inline-block;
 	font-weight: 700;
 	padding-right:10px;
+}
 
-
+.box {
+   display: inline-flex;
+   align-items: center;
+   margin-top: 50px;
+   padding-right: 50px;
 }
 
 .chg-quantity{
