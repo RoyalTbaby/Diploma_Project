@@ -11,7 +11,7 @@ h1,h2,h3,h4,h5,h6{
 .box-element{
 	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
 	background-color: #fff;
-	border-radius: 0px;
+	border-radius: 50px;
 	padding: 10px;
 }
 
