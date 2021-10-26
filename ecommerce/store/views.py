@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import JsonResponse
+
 from . models import *
 
 
@@ -38,3 +40,7 @@ def payment(request):
 def about(request):
     context = {}
     return render(request, 'store/about.html', context)
+
+
+def updateItem(request):
+    return JsonResponse('Item was added', safe=False)
