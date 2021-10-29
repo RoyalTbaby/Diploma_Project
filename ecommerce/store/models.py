@@ -78,7 +78,7 @@ class OrderItem(models.Model):
         return total
 
 
-class Shipping(models.Model):
+class ShippingAddress(models.Model):
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, blank=True, null=True)
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, blank=True, null=True)
     address = models.CharField(max_length=200, null=True)
