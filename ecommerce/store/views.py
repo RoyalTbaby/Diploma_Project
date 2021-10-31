@@ -9,15 +9,19 @@ from .utils import cookieCart, cartData, guestOrder
 
 def shop(request):
     data = cartData(request)
-    cartItems = data['cartItems']
 
-    products = Product.objects.all
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
+
+    products = Product.objects.all()
     context = {'products': products, 'cartItems': cartItems}
     return render(request, 'store/shop.html', context)
 
 
 def cart(request):
     data = cartData(request)
+
     cartItems = data['cartItems']
     order = data['order']
     items = data['items']
@@ -28,6 +32,7 @@ def cart(request):
 
 def payment(request):
     data = cartData(request)
+
     cartItems = data['cartItems']
     order = data['order']
     items = data['items']
@@ -44,9 +49,8 @@ def updateItem(request):
     data = json.loads(request.body)
     productId = data['productId']
     action = data['action']
-
     print('Action:', action)
-    print('ProductId:', productId)
+    print('Product:', productId)
 
     customer = request.user.customer
     product = Product.objects.get(id=productId)
@@ -74,14 +78,13 @@ def processOrder(request):
     if request.user.is_authenticated:
         customer = request.user.customer
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
-
     else:
         customer, order = guestOrder(request, data)
 
     total = float(data['form']['total'])
     order.transaction_id = transaction_id
 
-    if total == float(order.get_cart_total):
+    if total == order.get_cart_total:
         order.complete = True
     order.save()
 
@@ -95,4 +98,4 @@ def processOrder(request):
             zipcode=data['shipping']['zipcode'],
         )
 
-    return JsonResponse('Payment complete', safe=False)
+    return JsonResponse('Payment submitted..', safe=False)
