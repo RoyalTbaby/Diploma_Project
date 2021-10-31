@@ -1,9 +1,14 @@
 {% load static %}
 {% block content %}
 
-    <video href="{% url 'shop' %}" width="100%" height="100%" autoplay muted>
+    <html>
+   <body style="background-color:black;">
+       <video href="{% url 'shop' %}" width="100%" height="100%" autoplay muted>
         <source src="{% static 'video/baby.mp4' %}" type="video/mp4">
     </video>
     <br>
 
 {% endblock content %}
+   </body>
+</html>
+
