@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
 import json
 import datetime
@@ -7,6 +7,7 @@ from .forms import CreateUserForm
 from .models import *
 from .utils import cookieCart, cartData, guestOrder
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 
 
 def registerPage(request):
@@ -16,6 +17,10 @@ def registerPage(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
+            user = form.cleaned_data.get('username')
+            messages.success(request, 'Thank you for creating an account with us ' + user)
+
+            return redirect('login')
 
     context = {'form': form}
     return render(request, 'store/register.html', context)
