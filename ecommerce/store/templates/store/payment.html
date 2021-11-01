@@ -76,7 +76,7 @@
         paypal.Buttons({
 
             style:{
-                color: 'silver',
+                color: 'black',
                 shape: 'rect',
             },
 
@@ -95,11 +95,6 @@
             onApprove: function(data, actions) {
                 return actions.order.capture().then(function(orderData) {
                     submitFormData()
-
-                    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                    var transaction = orderData.purchase_units[0].payments.captures[0];
-
-
                 });
             }
 
