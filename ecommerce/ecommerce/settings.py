@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
     'store',
 ]
 
@@ -131,3 +132,20 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+
+LOGIN_REDIRECT_URL = 'store'
+LOGOUT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'login'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '486340977611-qnal833u6dfur4v0uairt8ahb9pbelll.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+
+LOGIN_URL = '/auth/login/google-oauth2/'

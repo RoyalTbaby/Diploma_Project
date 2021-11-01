@@ -2,13 +2,56 @@
 {% block content %}
 
     <html>
-   <body style="background-color:black;">
-       <video href="{% url 'shop' %}" width="100%" height="100%" autoplay muted>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+              crossorigin="anonymous">
+
+        {#    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">#}
+    </head>
+    <body style="background-color:black;">
+    <video href="{% url 'shop' %}" width="100%" height="100%" autoplay muted>
         <source src="{% static 'video/baby.mp4' %}" type="video/mp4">
     </video>
     <br>
+    <hr>
+    <div class="container">
+        <div class='row' style="color:white">
+            <div class="column">
+                <div>Whatever the occasion, Babyboo Fashion is the place to come if you are looking for
+                women’s fashion online. Whether it’s for formals, parties, or just hanging out with friends, we sell
+                women’s clothing online to help you create the look you are after. We have all the latest trends so you
+                can slay the look before any of your friends. Plus we’ve got shoes, lingerie and accessories to
+                coordinate with any outfit. If you are looking for on trend fashion at affordable prices, look no
+                further. Shop here for all your women’s fashion and we’ll deliver it directly to your doorstep. Whether
+                you’re heading out to a party or chilling with the girls, we have hundreds of outfits to choose from.
+                From dresses, tops, skirts and two piece sets to activewear, swimwear, shoes and accessories, we’ve got
+                    all your fashion needs covered.<br><br></div>
+                <div>
+                If you really want to sparkle, check out our sparkle collection that includes sparkle dresses, long
+                sleeve tops, crop tops, bottoms, skirts, shoes and more in a wide variety of sparkly colours. From a
+                pink sparkle jumpsuit, a silver glitter mini dress or black sparkle shorts, with so many styles to
+                choose from, you’re sure to find something to suit you. Or if you want to shine on the dance floor, take
+                a look at our satin collection. Whether you’re after a mini dress, a midi dress or a maxi dress our
+                satin dresses come in a range of styles. We also have satin playsuits, jumpsuits, crop tops and more. Or
+                if you really want to make a statement check out our neon range. You’ll look amazing in our dresses,
+                skirts, pants or a bodysuit that come in vibrant colours such as hot pink, red, mango, orange, lilac,
+                peach and many others. Or for a unique look, check out our latex collection of women’s fashion online.<br><br></div>
+
+            </div>
+        </div>
+    </div>
+
+    <br>
 
 {% endblock content %}
-   </body>
-</html>
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+      </a>
+      <span class="text-muted">© 2021 Company, Inc</span>
+    </div>
 
+  </footer>
+</body>
+</html>
